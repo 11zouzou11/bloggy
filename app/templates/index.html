@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloggy
+    {% if title %}
+    <title>{{ title }} - Bloggy
 
     </title>
+    {% else %}
+    <title>Welcome To Bloggy</title>
+    {% endif %}
 </head>
 <body>
     <h1>hi, {{ user.username }}</h1>
+    {% for post in posts %}
+    <div><p>
+        {{ post.author.username }} Says: <b>{{ post.body }}</b>
+    </p></div>
+    {% endfor %}
 </body>
 </html>
