@@ -1,6 +1,9 @@
+from operator import imod
+from flask import render_template
 from app import app
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "hello"
+    user = {'username': 'Joseph'}
+    return render_template('index.html', title='Home', user=user)
