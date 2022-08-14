@@ -14,8 +14,8 @@
 </head>
 <body>
     <div>Bloggy :
-            <a href="/index">Home</a>
-            <a href="/login">Log In</a>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('login') }}">Log In</a>
 
         </div>
     {% with messages = get_flashed_messages() %}
