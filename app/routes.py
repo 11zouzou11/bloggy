@@ -7,6 +7,7 @@ from app import app, db
 from app.forms import LoginForm, RegisterForm
 from app.models import User
 
+
 @app.route('/')
 @app.route('/index')
 @login_required
@@ -22,6 +23,7 @@ def index():
             'body': 'nice day2222!'
         }
     ]
+
     return render_template('index.html', title='Home', posts=posts)
 
 
@@ -70,11 +72,11 @@ def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     posts = [
         {
-            'author': { user },
+            'author':  user ,
             'body': 'nice day!'
         },
         {
-            'author': { user },
+            'author':  user ,
             'body': 'nice day2222!'
         }
     ]
