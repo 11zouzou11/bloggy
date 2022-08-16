@@ -1,8 +1,8 @@
 from wsgiref.validate import validator
 from xml.dom import ValidationErr
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from wtforms import StringField, TextAreaField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User
 
 class LoginForm(FlaskForm):
@@ -28,3 +28,9 @@ class RegisterForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('This email is already in use!')
+
+
+class EditProfileForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    about_me = TextAreaField('About me', validators=[Length(min=0, max=120)])
+    submit = SubmitField('Submit')
