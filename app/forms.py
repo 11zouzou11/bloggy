@@ -1,3 +1,4 @@
+from ast import Sub
 from cmath import atan
 from wsgiref.validate import validator
 from xml.dom import ValidationErr
@@ -46,4 +47,8 @@ class EditProfileForm(FlaskForm):
             if user is not None:
                 raise ValidationError('Please use a different username.')
 
-
+class Postform(FlaskForm):
+    post = TextAreaField('Type Here', validators=[
+        DataRequired(), Length(min=1, max=360)
+    ])
+    submit = SubmitField('Submit')
