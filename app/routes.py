@@ -15,11 +15,12 @@ from app.models import User, Post
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.date, author=current_user)
+        post = Post(body=form.post.data, author=current_user)
         db.session.add(post)
         db.session.commit()
         flash('Your post is now posted!')
         return redirect(url_for('index'))
+    posts = current_user.followed_posts().all()
     return render_template('index.html', title='Home', form=form, posts=posts)
 
 
