@@ -23,6 +23,13 @@ def index():
     posts = current_user.followed_posts().all()
     return render_template('index.html', title='Home', form=form, posts=posts)
 
+@app.route('/wall')
+@login_required
+def wall():
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('index.html', title='Wall', posts=posts)
+    
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
