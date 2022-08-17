@@ -5,7 +5,7 @@ from flask import render_template, flash, redirect, url_for, request
 from werkzeug.urls import url_parse
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
-from app.forms import  LoginForm, RegisterForm, EditProfileForm, Postform
+from app.forms import  LoginForm, RegisterForm, EditProfileForm, PostForm
 from app.models import User, Post
 
 
@@ -13,24 +13,13 @@ from app.models import User, Post
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    form = Postform()
+    form = PostForm()
     if form.validate_on_submit():
         post = Post(body=form.post.date, author=current_user)
         db.session.add(post)
         db.session.commit()
         flash('Your post is now posted!')
         return redirect(url_for('index'))
-    posts = [
-        {
-            'author': {'username': 'Joseph'},
-            'body': 'nice day!'
-        },
-        {
-            'author': {'username': 'Joseph'},
-            'body': 'nice day2222!'
-        }
-    ]
-
     return render_template('index.html', title='Home', form=form, posts=posts)
 
 
@@ -111,7 +100,37 @@ def edit_profile():
     return render_template('edit_profile.html', title='Edit Profile',
                            form=form)
 
+@app.route('/follow/<username>')
+@login_required
+def follow(username):
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        flash('User {} not found'.format(username))
+        return redirect(url_for('index'))
+    if user == current_user:
+        flash('Sneaky ! you cannot see yourself without a mirror !')
+        return redirect(url_for('user', username=username))
+    current_user.follow(user)
+    db.session.commit()
+    flash('You are following {}'.format(username))
+    return redirect(url_for('user', username=username))
 
+@app.route('/unfollow/<username>')
+@login_required
+def unfollow(username):
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        flash('User {} not found'.format(username))
+        return redirect(url_for('index'))
+    if user == current_user:
+        flash('Oops ! that does not work that way !')
+        return redirect(url_for('user', username=username))
+    current_user.unfollow(user)
+    db.session.commit()
+    flash('You are not following {}'.format(username))
+    return redirect(url_for('user', username=username))
+
+ 
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('404.html'), 404
