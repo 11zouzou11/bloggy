@@ -4,49 +4,32 @@ Login
 {% endblock %}
 
 {% block content %}
-    <div class="">
+    <div class="container mt-5">
     <form action="" method="post"">
         {{ form.hidden_tag() }}
-        <h3 class="align-centre">Login to your account</h3>
-
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="Username">
-            <label for="password">Password</label>
-            <input type="text" id="passowrd" name="password" class="form-control" placeholder="Passowrd">
-        </div>
-        <br>
+        <h3 align="center">Login to your account</h3>
         <div align="center">
-        <button class="btn btn-secondary" type="submit">LogIn</button>
-        </div>
-
-
-
-
-
-
-        <p>
             {{ form.username.label }} <br>
             {{ form.username(size=32) }} <br>
             {% for error in form.username.errors %}
             <span style="color: red"> {{ error }}</span>
             {% endfor %}
 
-        </p>
-        <p>
+        </div>
+        <div align="center">
             {{ form.password.label }} <br>
             {{ form.password(size=32) }} <br>
             {% for error in form.password.errors %}
             <span style="color: red"> {{ error }}</span>
             {% endfor %}
-        </p>
-        <p>
+        </div>
+        <div align="center">
             {{ form.remember_me() }} {{ form.remember_me.label }}
-        </p>
-        <p>
+        </div>
+        <div align="center">
             {{ form.submit }}
-        </p>
+        </div>
     </form>
-    <p>Or Register Here! <a href="{{ url_for('register') }}">Click Here To Join Us!</a></p>
+    <div align="center">Or Register Here! <a href="{{ url_for('register') }}">Click Here To Join Us!</a></div>
     </div>
 {% endblock %}
