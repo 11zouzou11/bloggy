@@ -10,6 +10,7 @@ from flask_moment import Moment
 from config import Config
 
 app = Flask(__name__)
+app._static_folder = 'static'
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
