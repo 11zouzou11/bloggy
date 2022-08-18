@@ -1,3 +1,7 @@
+{% block extraheader %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/_post.css') }}">
+{% endblock extraheader %}
+
 <table>
     <tr valign="top">
         <td><img src="{{ post.author.avatar(24) }}" alt="user-profile-image"></td>
@@ -5,6 +9,6 @@
             <a href="{{ url_for('user', username=post.author.username) }}">
                 {{ post.author.username }}
             </a> 
-            Says : <br> {{ post.body }} <br></td>
+            Posted :<br> <br>{{ post.body }} <br><br></td>
     </tr>
 </table>

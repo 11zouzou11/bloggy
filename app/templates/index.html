@@ -1,21 +1,38 @@
 {% extends "base.html" %}
+{% block extraheader %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock extraheader %} 
 
 {% block content %}
-    <h1>hi, {{ current_user.username }}</h1>
-    {% if form %}
-    <form action="" method="post">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.post.label }} <br>
-            {{ form.post(cols=48, rows=6) }} <br>
-            {% for error in form.post.errors %}
-            <span style="color: red">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
-    {% endif %}
-    {% for post in posts %}
-        {% include "_post.html" %}
-    {% endfor %}
-{% endblock %}
+    <div class="container">
+        <div class="row col-lg-12">
+                <h1>Hello {{ current_user.username }} !</h1>
+                <p>Here you can find your and the people that you follow posts</p>
+        </div>
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                {% if form %}
+                <form action="" method="post">
+                    {{ form.hidden_tag() }}
+                    <div>
+                        {{ form.post.label }} <br>
+                        {{ form.post(cols=48, rows=6) }} <br>
+                        {% for error in form.post.errors %}
+                        <span style="color: red">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                    <div>{{ form.submit() }}</div>
+                </form>
+            </div>
+        </div>
+                </div>
+                {% endif %}
+                <div class="row">
+                    <div class="container col-lg-12">
+                        {% for post in posts %}
+                            {% include "_post.html" %}
+                        {% endfor %}
+                    </div>
+                </div>
+            
+            {% endblock %}
