@@ -46,3 +46,11 @@
 ![Responsiveness testing](testing/images/profile-vid_AdobeExpress.gif)
 ![Responsiveness testing](testing/images/wall-vid_AdobeExpress.gif)
 ![Responsiveness testing](testing/images/register-vid_AdobeExpress.gif)
+
+
+---
+
+## 3. Browser compatibility
+![Browser compatibility](testing/images/browsers.png)
+
+---
