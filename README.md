@@ -156,3 +156,93 @@ website:
     - Python provides the backend of the project.
 
 
+#### Frameworks, libraries & Other
+- [Gitpod](https://www.gitpod.io/) 
+    - The GitPod is used to develop the project.
+- [Git](https://git-scm.com/)
+    - The Git was used for version control to commit to Git and push to GitHub.
+- [GitHub](https://github.com/)
+    - The GitHub is used to host the project.
+- [Google Fonts](https://fonts.google.com/)
+    - Google Fonts is used to provide the font roboto for all the text that is used in the project. 
+- [Balsamiq](https://balsamiq.com/)
+    - Balsamiq is used to create the mockup designs for the project.
+- [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+    - Bootstrap is used for the design framework.
+- [Postgres](https://www.postgresql.org)
+    - Postgres is the fully managed cloud database service used for the project.
+- [Heroku](https://dashboard.heroku.com/)
+    - Heroki is the cloud platform to deploying the app.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - Flask is the web framework used to provide libraries, tools and technologies for the app.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+    - Jinja is used for templating Python
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)
+    - Werkzeug is used for password hashing and authentication and autohorization.
+
+
+#### Testing tools used 
+- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) is used to detect problems and test responsiveness.
+- [Autoprefixer](https://autoprefixer.github.io/)
+    - Autoprefixer is used to parse the CSS and to add vendor prefixes to CSS rules. 
+- [W3C Markup Validation Service](https://validator.w3.org/)
+    - The W3C Markup Validation Service is used to check whether there were any errors in the HTML5 code. 
+- [W3C CSS validator](https://jigsaw.w3.org/css-validator/)
+    - The W3C CSS validator is used to check whether there were any errors in the CSS3 code.
+- [JShint](https://jshint.com/)
+    - JShint is a JavaScript validator that is used to check whether there were any errors in the JavaScript code. 
+- [PEP8](http://pep8online.com/)
+    - The PEP8 validator is used to check whether there were any errors in the Python code.
+
+
+<span id="testing"></span>
+
+<h1>4. Testing</h1>
+
+The testing process can be found [here](TESTING.md).
+
+<span id="deployment"></span>
+
+<h1>5. Deployment</h1>
+
+#### Requirements 
+- Python3 
+- Github account 
+- Heroku account
+
+#### Clone the project 
+To make a local clone, follow the following steps. 
+1. Log in to GitHub and go to the repository. 
+2. Click on the green button with the text **“Code”.**
+3. Click on **“Open with GitHub Desktop”** and follow the prompts in the GitHub Desktop Application or follow the instructions from **[this link](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop)** to see how to clone the repository in other ways. 
+
+
+#### Working with the local copy
+1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: **pip3 install -r requirements.txt**.
+
+2. Run the app: Open your terminal window in your IDE. Type python3 bloggy.py and run the app.
+
+#### Heroku Deployment  
+1. Set up local workspace for Heroku 
+    - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which filed to install.)
+    - In termial window of your IDE type: **python bloggy.py > Procfile** (The file is needed for Heroku to know which file is needed as entry point.)
+2. Set up Heroku: create a Heroku account and create a new app and select your region. 
+3. Deployment method 'Github'
+    - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
+        - Search your repository to connect with it.
+        - When your repository appears click on **connect** to connect your repository with the Heroku. 
+    - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
+        - Enter your config vars.
+4. Push the requirements.txt and Procfile to repository. 
+     ```
+    $ git add requirements.txt
+    $ git commit -m "Add requirements.txt"
+    $ git add Procfile 
+    $ git commit -m "Add Procfile"
+    ```
+5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Aotmatic deployments**. Click on **Enable Automatic Deploys**. By **Manual deploy** click on **Deploy Branch**.
+
+Heroku will receive the code from Github and host the app using the required packages. 
+Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
+
+
