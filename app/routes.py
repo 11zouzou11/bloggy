@@ -23,6 +23,24 @@ def index():
     posts = current_user.followed_posts().all()
     return render_template('index.html', title='Home', form=form, posts=posts)
 
+@app.route('/delete-post/<id>', methods=['GET', 'POST'])
+@login_required
+def delete_post(id):
+    post = Post.query.filter_by(id=id).first()
+    
+    if not post:
+        flash("post does not exist", category='error')
+    elif current_user.id != post.id:
+        flash('You do not have permission to delete this post.', category='error')
+    else:
+        db.session.delete(post)
+        db.session.commit()
+        flash('Post deleted')
+        
+    return redirect(url_for('index'))
+
+
+
 @app.route('/wall')
 @login_required
 def wall():
@@ -46,7 +64,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(url_for('index'))
-    return render_template('login.html', title='Login', form=form)
+    return render_template('login.html', title='LogIn', form=form)
 
 
 @app.route('/logout')
@@ -74,16 +92,8 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {
-            'author':  user ,
-            'body': 'nice day!'
-        },
-        {
-            'author':  user ,
-            'body': 'nice day2222!'
-        }
-    ]
+    posts = user.posts.order_by(Post.timestamp.desc()).all()
+
     return render_template('user.html', user=user, posts=posts) 
 
 @app.before_request
@@ -137,6 +147,9 @@ def unfollow(username):
     db.session.commit()
     flash('You are not following {}'.format(username))
     return redirect(url_for('user', username=username))
+
+
+
 
  
 @app.errorhandler(404)

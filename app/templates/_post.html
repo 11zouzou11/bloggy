@@ -2,6 +2,55 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/_post.css') }}">
 {% endblock extraheader %}
 
+
+{% block content %}
+    <div id="posts" class="container">
+            <div class="card border-dark mb-3">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <div class="col-md-4 p-2">
+                    <img src="{{ post.author.avatar(48) }}" alt="user-profile-image">
+                    <a href="{{ url_for('user', username=post.author.username) }}">
+                        {{ post.author.username }}
+                    </a> 
+                    </div>
+
+                    <div class="col-md-4 ms-auto p-2 text-end">
+                    {% if current_user.id==post.author.id %}
+                    <div class="btn-group">
+                        <button type="button"
+                        class="btn btn-sm btn-secondary dropdown-toggle"
+                        data-bs-toggle="dropdown">
+                        </button>
+                        <ul>
+                            <li class="dropdown-menu">
+                                <a href="" class="dropdown-item">Delete</a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% endif %}</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        {{ post.body }}
+                    </div>
+                    <div class="card-footer text-muted">
+                        {{ post.timestamp }}
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+<!-----------
 <table>
     <tr valign="top">
         <td><img src="{{ post.author.avatar(24) }}" alt="user-profile-image"></td>
@@ -12,3 +61,4 @@
             Posted :<br> <br>{{ post.body }} <br><br></td>
     </tr>
 </table>
+------->
