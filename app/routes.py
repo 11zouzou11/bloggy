@@ -28,14 +28,9 @@ def index():
 def delete_post(id):
     post = Post.query.filter_by(id=id).first()
     
-    if not post:
-        flash("post does not exist", category='error')
-    elif current_user.id != post.id:
-        flash('You do not have permission to delete this post.', category='error')
-    else:
-        db.session.delete(post)
-        db.session.commit()
-        flash('Post deleted')
+    db.session.delete(post)
+    db.session.commit()
+    flash('Post deleted')
         
     return redirect(url_for('index'))
 
