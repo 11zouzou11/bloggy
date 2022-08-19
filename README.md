@@ -85,3 +85,15 @@ All the goals of first-time visitors also apply for site members. There are addi
 The four colours that are used for the recipe website are very neutral and simple. I have chosen these colours because the colours give a sleek and uncluttered appearance. 
 
 ![Colour scheme](/readme/images/colors-ms3.png)
+
+- #### Fonts
+
+The **Source Sans Pro**are used throughout the whole website. Sans serif and cursive are the fallbacks in case the main font isn’t being imported to the site correctly. 
+
+
+- #### Interactive design 
+
+    - The website has to be easy to navigate. 
+    - The user can quickly find the information he/she wants to find.
+
+![Interactive design](/readme/images/New%20Project%201.png)
