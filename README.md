@@ -243,6 +243,8 @@ To make a local clone, follow the following steps.
 Heroku will receive the code from Github and host the app using the required packages. 
 Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
 
+<span id="credits"></span>
+
 <h1>6. Credits</h1>
 
 ### Content
