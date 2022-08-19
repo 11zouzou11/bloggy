@@ -102,11 +102,11 @@
 ## 6. Bugs | Solved
 
 1. The developer faced a bug where he couldn’t make migration to the db, after looking through stack overflow and documentations the developer found a solution where he added an import of the models to the env.py within the migrations folder. 
-![stackoverflow](https://github.com/miguelgrinberg/Flask-Migrate/issues/203)
+[Stack Overflow](https://github.com/miguelgrinberg/Flask-Migrate/issues/203)
 
 2. The developer faced a bug where the app crashed after migrating the db with a : RuntimeError: UNIQUE constraint failed: users.username . 
 the developer fixed the bug relying on stackoverflow.
-![stackoverflow](https://cs50.stackexchange.com/questions/38498/finance-unique-constraint-failed-users-username)
+[Stack Overflow](https://cs50.stackexchange.com/questions/38498/finance-unique-constraint-failed-users-username)
 
 3. The developer had a bug where th app crashed when deployed tp Heroku, the problem was related to github branches. The developer fixed the issue relying on stackoverflow. 
-![stackoverflow](https://stackoverflow.com/questions/9794413/failed-to-push-some-refs-to-githeroku-com)
+[Stack Overflow](https://stackoverflow.com/questions/9794413/failed-to-push-some-refs-to-githeroku-com)
