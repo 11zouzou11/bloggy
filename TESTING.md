@@ -22,3 +22,13 @@
     - There is 6 erros on every page because of the bootstrap classes.
 
     ![HTML-calidation](testing/images/html-validation.png)
+
+   - **[CSS Validator](https://jigsaw.w3.org/css-validator/):** 15 error related to bootstrap.
+   ![CSS Validator](testing/images/index-css-validation.png)
+
+
+   - **[Python validator | PEP8](http://pep8online.com/):** No errors found
+
+   ![python validator](testing/images/python-validation.png)
+
+---
