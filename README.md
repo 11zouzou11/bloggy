@@ -107,9 +107,52 @@ The database is structured as follows:
 ### 1.5 Mockup designs
 
 
-Wireframe mockups were created in a [Balsamiq]((https://balsamiq.com/)
+Wireframe mockups were created in a [Balsamiq]((https://balsamiq.com/ "Link to baslsamiq")
 
 
 website: 
 
 ![Website Wireframe](/readme/images/ms3-wireframes.png "Website Wireframe")
+
+
+### 2.1 Existing features 
+
+#### 1. Design 
+- An attractive and simple layout with consistency.
+- Simple navigation throughout the website by using the navigation bar. 
+- Showing the posts simple and clearly
+
+#### 2. General 
+- The index page shows an introduction in the shape of a header and a login form. And the page shows a link to registration.
+- People can sign up for a new account.
+
+#### 3. Home
+- The user can creat a post and submit it.
+- The user can see the post they created and the users that they follow.
+- The user can click on another user's name and access their profile.
+
+#### 4. profile
+
+- The user can see their own profile and edit some of the info.
+- The user can easily logout of the account with a navbar link.
+
+
+### 2.2 Features left to implement in the future 
+- Adding a like and a comment sections to the posts.
+- Giving the user the ability to uppload their own picture whithin the profile.
+- Adding paginaotion to the wall.
+- Add form validation on the backend.
+- The user can delete their profile.
+
+
+#### Languages used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+    - HTML5 provides the structure and the content for my project. 
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    - CSS3 provides the style of the HTML5 elements.
+- [jQuery](https://jquery.com/)
+    - jQuery used as the JavaScript functionality.
+- [Python](https://www.python.org/)
+    - Python provides the backend of the project.
+
+
