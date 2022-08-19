@@ -97,3 +97,10 @@ The **Source Sans Pro**are used throughout the whole website. Sans serif and cur
     - The user can quickly find the information he/she wants to find.
 
 ![Interactive design](/readme/images/New%20Project%201.png)
+
+### 1.4 Information architecture
+
+The database is structured as follows:
+
+![Information architecture](/readme/images/data-structure-for-ms3-follow%20.png)
+
