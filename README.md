@@ -84,4 +84,4 @@ All the goals of first-time visitors also apply for site members. There are addi
 
 The four colours that are used for the recipe website are very neutral and simple. I have chosen these colours because the colours give a sleek and uncluttered appearance. 
 
-![Colour scheme](/readme/images/colors-ms3.pngreadme)
+![Colour scheme](/readme/images/colors-ms3.png)
