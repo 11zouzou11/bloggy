@@ -6,7 +6,7 @@ from werkzeug.urls import url_parse
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
 from app.forms import LoginForm, RegisterForm, EditProfileForm, PostForm
-from app.models import User, Post, Comment
+from app.models import User, Post
 
 
 @app.route('/', methods=['GET', 'POST'])
