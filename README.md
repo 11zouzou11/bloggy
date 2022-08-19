@@ -37,3 +37,51 @@ This project is the third out of four Milestone Projects in the Full Stack Web D
 - <a href="#credits">6. Credits</a>
 - <a href="#Acknowledge">7. Acknowledge</a>
 - <a href="#Acknowledge">8. Disclaimer</a>
+
+
+---
+
+
+<span id="ux"></span>
+
+<h1>1. User experience (UX)</h1>
+
+<span id="ux-goals"></span>
+
+### 1.1 Project goals 
+
+- Making a full-stack site that  allows its users to comunicate with each other without a filter.
+
+- Making a full-stack site that uses HTML, CSS, JavaScript, Python+Flask.
+
+- The users of the website can make use of CRUD (create, read, update and delete) for their profiles and posts
+
+- the users can follow each other to see their latest posts 
+
+<span id="ux-stories"></span>
+
+### 1.2 User stories 
+
+**First-time visitor goals:**
+
+1. As a first time visitor, I want to be able to visit the website on every device, so that I can look at the website on desktop, mobile and tablet. 
+2. As a first time visitor, I want to be able to navigate easily through the website, so I can find everything easily. 
+3. As a first time visitor, I want to register an account on the website, so I can share my recipes on Breaktasty.
+4. As a first time visitor, i want to find friends and family members.
+
+
+**Site member goals:** 
+
+All the goals of first-time visitors also apply for site members. There are additional user stories to the site members because they have more access to the website. See the additional user stories below.
+1. As a site member, I want to find my friends easily.
+2. As a site member, I want to be able to post stuff on the website freely.
+3. As a site member, I want to be able to remove my posts if i want to.
+4. As a site member, I want to be able to cusomize my profile
+
+### 1.3 Design 
+
+- #### Colour scheme 
+
+The four colours that are used for the recipe website are very neutral and simple. I have chosen these colours because the colours give a sleek and uncluttered appearance. 
+
+![Colour scheme](/readme/images/colors-ms3.pngreadme)
