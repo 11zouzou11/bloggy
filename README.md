@@ -104,3 +104,12 @@ The database is structured as follows:
 
 ![Information architecture](/readme/images/data-structure-for-ms3-follow%20.png)
 
+### 1.5 Mockup designs
+
+
+Wireframe mockups were created in a [Balsamiq]((https://balsamiq.com/)
+
+
+website: 
+
+![Website Wireframe](/readme/images/ms3-wireframes.png "Website Wireframe")
