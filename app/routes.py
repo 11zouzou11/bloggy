@@ -5,7 +5,7 @@ from flask import render_template, flash, redirect, url_for, request
 from werkzeug.urls import url_parse
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
-from app.forms import  LoginForm, RegisterForm, EditProfileForm, PostForm
+from app.forms import LoginForm, RegisterForm, EditProfileForm, PostForm
 from app.models import User, Post, Comment
 
 
@@ -23,33 +23,17 @@ def index():
     posts = current_user.followed_posts().all()
     return render_template('index.html', title='Home', form=form, posts=posts)
 
+
 @app.route('/delete-post/<id>', methods=['GET', 'POST'])
 @login_required
 def delete_post(id):
     post = Post.query.filter_by(id=id).first()
-    
+
     db.session.delete(post)
     db.session.commit()
     flash('Post deleted')
-        
+
     return redirect(url_for('index'))
-
-
-#@app.route('/create-comment/<post_id>', methods=['POST'])
-#@login_required
-#def create_comment(post_id):
-#   text = request.form.get('text')
-
-#    if not text:
-#       flash('Comment cannot be empty')
-#    else:
-#        post = Post.query.filter_by(id=post_id)
-#        if post:
-#            comment = Comment(text=text, username=current_user.id, post_id=post_id)
-#            db.session.add(comment)
-#            db.session.commit()
-            
-#    return redirect(url_for('index'))
 
 
 @app.route('/wall')
@@ -57,7 +41,6 @@ def delete_post(id):
 def wall():
     posts = Post.query.order_by(Post.timestamp.desc()).all()
     return render_template('index.html', title='Wall', posts=posts)
-    
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -104,14 +87,15 @@ def register():
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     posts = user.posts.order_by(Post.timestamp.desc()).all()
+    return render_template('user.html', user=user, posts=posts)
 
-    return render_template('user.html', user=user, posts=posts) 
 
 @app.before_request
 def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
+
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
@@ -129,6 +113,7 @@ def edit_profile():
     return render_template('edit_profile.html', title='Edit Profile',
                            form=form)
 
+
 @app.route('/follow/<username>')
 @login_required
 def follow(username):
@@ -143,6 +128,7 @@ def follow(username):
     db.session.commit()
     flash('You are following {}'.format(username))
     return redirect(url_for('user', username=username))
+
 
 @app.route('/unfollow/<username>')
 @login_required
@@ -160,12 +146,10 @@ def unfollow(username):
     return redirect(url_for('user', username=username))
 
 
-
-
- 
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('404.html'), 404
+
 
 @app.errorhandler(500)
 def internal_error(error):
