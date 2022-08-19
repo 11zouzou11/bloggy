@@ -35,8 +35,6 @@ This project is the third out of four Milestone Projects in the Full Stack Web D
 - <a href="#testing">4. Testing</a>
 - <a href="#deployment">5. Deployment</a>
 - <a href="#credits">6. Credits</a>
-- <a href="#Acknowledge">7. Acknowledge</a>
-- <a href="#Acknowledge">8. Disclaimer</a>
 
 
 ---
@@ -245,4 +243,23 @@ To make a local clone, follow the following steps.
 Heroku will receive the code from Github and host the app using the required packages. 
 Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
 
+<h1>6. Credits</h1>
 
+### Content
+- The game idea was implemented based on the developers insight
+
+## Code 
+
+The following sites were used on a more regular basis to help implement and build this responsive website : 
+
+- [Stack Overflow](https://stackoverflow.com/ "Link to Stack Overflow page")
+- [W3Schools](https://www.w3schools.com/ "Link to W3Schools page")
+- [Bootstrap](https://getbootstrap.com/ "Link to BootStrap page")
+- [Google](https://www.google.com/ "Link to Google page")
+- [Youtube](https://www.youtube.com/ "Link to Youtube page")
+
+- Note:
+    - the video contect were used to get a better understanding of the elements and everything got modified to meet the websites goals. 
+
+
+<a href="#Bloggy">Back to top!</a>
