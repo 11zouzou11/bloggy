@@ -6,7 +6,7 @@ from werkzeug.urls import url_parse
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
 from app.forms import  LoginForm, RegisterForm, EditProfileForm, PostForm
-from app.models import User, Post
+from app.models import User, Post, Comment
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -34,6 +34,22 @@ def delete_post(id):
         
     return redirect(url_for('index'))
 
+
+#@app.route('/create-comment/<post_id>', methods=['POST'])
+#@login_required
+#def create_comment(post_id):
+#   text = request.form.get('text')
+
+#    if not text:
+#       flash('Comment cannot be empty')
+#    else:
+#        post = Post.query.filter_by(id=post_id)
+#        if post:
+#            comment = Comment(text=text, username=current_user.id, post_id=post_id)
+#            db.session.add(comment)
+#            db.session.commit()
+            
+#    return redirect(url_for('index'))
 
 
 @app.route('/wall')

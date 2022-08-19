@@ -16,7 +16,12 @@
                     {{ form.hidden_tag() }}
                     <div>
                         {{ form.post.label }} <br>
-                        {{ form.post(cols=48, rows=6) }} <br>
+                        <div class="row">
+                            <div class="container col-lg-12">
+                        {{ form.post() }}
+                        </div>
+                        </div> 
+                        <br>
                         {% for error in form.post.errors %}
                         <span style="color: red">[{{ error }}]</span>
                         {% endfor %}
